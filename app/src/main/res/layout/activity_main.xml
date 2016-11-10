@@ -16,7 +16,13 @@
 
     </FrameLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"/>
+
     <RadioGroup
+        android:layout_marginTop="2dp"
         android:id="@+id/rg_main"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -31,7 +37,6 @@
 
         <RadioButton
             style="@style/rg_main_style"
-
             android:drawableTop="@drawable/video_rg_select"
             android:text="视频"
             />
