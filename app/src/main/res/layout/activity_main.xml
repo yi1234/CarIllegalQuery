@@ -46,7 +46,6 @@
 
         <RadioButton
             style="@style/rg_main_style"
-
             android:drawableTop="@drawable/find_rg_select"
             android:text="发现"
             />
