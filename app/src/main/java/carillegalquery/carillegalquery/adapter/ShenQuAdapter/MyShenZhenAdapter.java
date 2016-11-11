@@ -1,4 +1,4 @@
-package carillegalquery.carillegalquery.adapter;
+package carillegalquery.carillegalquery.adapter.ShenQuAdapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

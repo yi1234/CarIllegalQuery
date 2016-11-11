@@ -1,4 +1,4 @@
-package carillegalquery.carillegalquery.adapter;
+package carillegalquery.carillegalquery.adapter.ShenQuAdapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

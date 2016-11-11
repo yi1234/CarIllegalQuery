@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import carillegalquery.carillegalquery.R;
-import carillegalquery.carillegalquery.adapter.MySheQuAdapter;
+import carillegalquery.carillegalquery.adapter.ShenQuAdapter.MySheQuAdapter;
 
 /**
  * A simple {@link Fragment} subclass.

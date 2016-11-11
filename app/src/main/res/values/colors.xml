@@ -9,5 +9,6 @@
     <color name="shenZhenColorPrimaryDark">#0b0b0b</color>
     <color name="shenZhenPrimary">#4d4848</color>
     <color name="colorDivider">#e4dcdc</color>
+    <color name="colorActivityText">#fff</color>
 
 </resources>
