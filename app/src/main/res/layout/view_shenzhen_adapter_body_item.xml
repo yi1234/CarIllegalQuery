@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/view_shenzhen_adapter_imageview_item1"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/share__qzone_active" />
+
+        <TextView
+            android:id="@+id/tv_nickName"
+            style="@style/ShenZhenTV"
+            android:layout_alignTop="@id/civ_icon"
+            android:layout_toRightOf="@id/civ_icon"
+            android:text="平安"
+            android:textColor="@color/shenZhenColorPrimaryDark"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            style="@style/ShenZhenTV"
+            android:layout_alignBottom="@id/civ_icon"
+            android:layout_toRightOf="@id/civ_icon"
+
+            android:text="14:32"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            style="@style/ShenZhenTV"
+            android:layout_alignBottom="@id/civ_icon"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/tv_time"
+            android:text="来自 深圳市"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/ShenZhenTV"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="司法是放假手机覅是司法是放假手机覅是是咖啡加你司法是放假手机覅是是咖啡加你是咖啡加你哦双方就爱死"
+        android:textColor="@color/shenZhenColorPrimaryDark"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        style="@style/ShenZhenTV"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="司法是放假手机覅是司法是放假手机覅是是咖啡加你司法是放假手机覅是是咖啡加你是咖啡加你哦双方就爱死司法是放假手机覅是司法是放假手机覅是是咖啡加你司法是放假手机覅是是咖啡加你是咖啡加你哦双方就爱死"
+        android:textSize="17sp" />
+</LinearLayout>

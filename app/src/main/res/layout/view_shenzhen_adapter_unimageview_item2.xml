@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <include layout="@layout/view_shenzhen_adapter_body_item"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+
+        android:layout_height="20dp">
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:text="晒天气"
+            android:textColor="@color/colorFontSelect" />
+
+        <TextView
+            android:id="@+id/tv_type_location"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            style="@style/ShenZhenTV"
+            android:text="你好"
+            android:textColor="@color/colorFontSelect"
+            android:layout_toRightOf="@id/tv_type"
+            />
+        <RadioButton
+            android:id="@+id/rb_message"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
+            android:button="@null"
+            android:text="0"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:textColor="@color/shenZhenPrimary"
+            android:drawableLeft="@mipmap/peccancy__saturn_club_topic_icon_reply"/>
+        <RadioButton
+            android:id="@+id/rb_zan"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:button="@null"
+            android:textColor="@color/shenZhenPrimary"
+            android:text="0"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:drawableLeft="@mipmap/peccancy__saturn_club_topic_icon_zan"/>
+    </RelativeLayout>
+</LinearLayout>

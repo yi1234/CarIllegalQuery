@@ -1,4 +1,4 @@
-<resources>
+<resources >
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -20,5 +20,28 @@
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/font_select</item>
+    </style>
+<!--  xmlns:app="http://schemas.android.com/apk/res-auto"-->
+
+    <style name="tabLayout" >
+
+        <item name="android:layout_width">match_parent</item>
+
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="carillegalquery.carillegalquery:tabMinWidth">60dp</item>
+        <item name="carillegalquery.carillegalquery:tabIndicatorColor">@color/tabLayoutSelectColor</item>
+        <item name="carillegalquery.carillegalquery:tabMode">scrollable</item>
+        <item name="carillegalquery.carillegalquery:tabSelectedTextColor">@color/tabLayoutSelectColor</item>
+
+    </style>
+
+        <style name="viewPager">
+            <item name="android:layout_width">match_parent</item>
+
+        </style>
+
+    <style name="ShenZhenTV">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 </resources>

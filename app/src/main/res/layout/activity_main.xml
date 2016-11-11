@@ -10,7 +10,7 @@
 
 
 
-    //sdfghj
+
     <FrameLayout
         android:id="@+id/fl_main"
         android:layout_width="match_parent"

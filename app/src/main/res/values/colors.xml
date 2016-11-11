@@ -5,5 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorFontSelect">#38D2F3</color>
     <color name="colorFontNormal">#999FA2</color>
+    <color name="tabLayoutSelectColor">#21e9c7</color>
+    <color name="shenZhenColorPrimaryDark">#0b0b0b</color>
+    <color name="shenZhenPrimary">#4d4848</color>
+    <color name="colorDivider">#b3acac</color>
 
 </resources>

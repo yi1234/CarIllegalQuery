@@ -8,6 +8,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import carillegalquery.carillegalquery.fragment.HomeFragment;
+import carillegalquery.carillegalquery.fragment.SheQuFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < group.getChildCount(); i++) {
                     if (group.getChildAt(i).getId() == checkedId) {
                         showFragments(i);
+
                         break;
                     }
                 }
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     fragments[currentIndex] = new HomeFragment();
                     break;
                 case 3:
-                    fragments[currentIndex] = new HomeFragment();
+                    fragments[currentIndex] = new SheQuFragment();
                     break;
                 case 4:
                     fragments[currentIndex] = new HomeFragment();
