@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tv_home_peccancy_title"
+        android:layout_width="wrap_content"
+        android:textColor="#333232"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:text="好久都觉得离开国家队里感觉了"/>
+
+    <TextView
+        android:id="@+id/tv_home_peccancy_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="好久都觉得离开国家队里感觉了"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_home_peccancy_img_1"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bj__dna_item_state_selected"/>
+
+        <ImageView
+            android:id="@+id/iv_home_peccancy_img_2"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bj__dna_item_state_selected"/>
+
+        <ImageView
+            android:id="@+id/iv_home_peccancy_img_3"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bj__dna_item_state_selected"/>
+    </LinearLayout>
+
+</LinearLayout>

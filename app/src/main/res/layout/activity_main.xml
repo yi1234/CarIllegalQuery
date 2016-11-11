@@ -9,7 +9,7 @@
     tools:context="carillegalquery.carillegalquery.MainActivity">
 
 
-
+    //sdfghj
 
     <FrameLayout
         android:id="@+id/fl_main"
@@ -25,42 +25,43 @@
         android:background="#ccc"/>
 
     <RadioGroup
-        android:layout_marginTop="2dp"
         android:id="@+id/rg_main"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginBottom="5dp"
+        android:layout_marginTop="2dp"
         android:orientation="horizontal">
 
         <RadioButton
             style="@style/rg_main_style"
             android:drawableTop="@drawable/home_rg_select"
             android:text="首页"
+            android:textColor="@color/font_select"
             />
 
         <RadioButton
             style="@style/rg_main_style"
             android:drawableTop="@drawable/video_rg_select"
             android:text="视频"
+            android:textColor="@color/font_select"
             />
 
         <RadioButton
             style="@style/rg_main_style"
             android:drawableTop="@drawable/find_rg_select"
             android:text="发现"
-            />
+            android:textColor="@color/font_select"/>
 
         <RadioButton
             style="@style/rg_main_style"
-
             android:drawableTop="@drawable/shequ_rg_select"
             android:text="社区"
-            />
+            android:textColor="@color/font_select"/>
 
         <RadioButton
             style="@style/rg_main_style"
             android:drawableTop="@drawable/user_rg_select"
             android:text="我的"
-            />
+            android:textColor="@color/font_select"/>
     </RadioGroup>
 </LinearLayout>

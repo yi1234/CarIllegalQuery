@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout android:id="@+id/gl_home_subs_1"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:columnCount="4"
+            android:orientation="horizontal"
+            android:rowCount="2"
+    >
+
+    <Button
+        android:id="@+id/btn_baibaoxiang"
+        android:background="@null"
+        android:drawableTop="@mipmap/ic_home_gaofadi"
+        android:text="百宝箱"/>
+
+    <Button
+        android:id="@+id/btn_drive_recorder"
+        android:background="@null"
+        android:drawableTop="@mipmap/ic_home_drive_recorder"
+        android:text="行车记录仪"/>
+
+    <Button
+        android:id="@+id/btn_youhui"
+        android:background="@null"
+        android:drawableTop="@mipmap/ic_home_youhui"
+        android:text="车主福利"/>
+
+    <Button
+        android:id="@+id/btn_chexian"
+        android:background="@null"
+        android:drawableTop="@mipmap/ic_home_floor_price_car_insurance"
+        android:text="底价车险"/>
+
+    <Button
+        android:id="@+id/btn_ddchezhu"
+        android:background="@null"
+        android:drawableTop="@mipmap/toutiao__qctt_home_ic_xxxc"
+        android:text="滴滴车主"/>
+
+    <Button
+        android:id="@+id/btn_chezhurenzheng"
+        android:background="@null"
+        android:drawableTop="@mipmap/toutiao__qctt_home_ic_ppgs"
+        android:text="车主认证"/>
+
+    <Button
+        android:id="@+id/btn_remenhuodong"
+        android:background="@null"
+        android:drawableTop="@mipmap/toutiao__qctt_home_ic_sgcl"
+        android:text="热门活动"/>
+
+    <Button
+        android:id="@+id/btn_youjiangshijia"
+        android:background="@null"
+        android:drawableTop="@mipmap/ic_home_youjiangshijia"
+        android:text="有奖试驾"/>
+
+</GridLayout>

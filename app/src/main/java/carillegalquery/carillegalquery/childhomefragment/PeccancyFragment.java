@@ -4,6 +4,7 @@ package carillegalquery.carillegalquery.childhomefragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,23 +19,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import carillegalquery.carillegalquery.R;
-import carillegalquery.carillegalquery.adapter.homeadapter.MyHomeSubsListAdapter;
-import carillegalquery.carillegalquery.bean.HomeSubsList;
+import carillegalquery.carillegalquery.adapter.homeadapter.MyHomePeccancyListAdapter;
+import carillegalquery.carillegalquery.bean.HomePeccancyList;
 import carillegalquery.carillegalquery.utils.HttpUrl;
 import cz.msebera.android.httpclient.Header;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SubscribeFragment extends Fragment {
+public class PeccancyFragment extends Fragment {
 
 
     private ListView lv_show;
-    private MyHomeSubsListAdapter myHomeSubsListAdapter;
+    private MyHomePeccancyListAdapter myHomePeccancyListAdapter;
+    private List<HomePeccancyList.DataBean.TopicListBean> list;
     private AsyncHttpClient asyncHttpClient;
-    private List<HomeSubsList.DataBean.ItemListBean> list;
 
-    public SubscribeFragment() {
+    public PeccancyFragment() {
         // Required empty public constructor
     }
 
@@ -43,7 +44,7 @@ public class SubscribeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_subscribe, container, false);
+        return inflater.inflate(R.layout.fragment_peccancy, container, false);
     }
 
     @Override
@@ -56,29 +57,37 @@ public class SubscribeFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        lv_show = (ListView) getView().findViewById(R.id.lv_subs_view);
-        //TODO 适配器
 
-        myHomeSubsListAdapter = new MyHomeSubsListAdapter(getActivity(), list);
-        lv_show.setAdapter(myHomeSubsListAdapter);
-        doPost();
+        //listView嵌套在scrollView里面的高度默认为unSepeication(未指定)
+        //两种方法
+        //1.动态设置listView的高度
+        //2.继承listView ,制定高度(Integer.MAX_VALUE>>2)和模式来创建一个规格(一般用这种)
 
+        lv_show = (ListView) getView().findViewById(R.id.lv_home_peccancy);
+        //TODO适配器
+        myHomePeccancyListAdapter = new MyHomePeccancyListAdapter(getActivity(), list);
+        lv_show.setAdapter(myHomePeccancyListAdapter);
+
+        doGet();
     }
 
-    private void doPost() {
-        asyncHttpClient.post(getActivity(), HttpUrl.home_subs_list_url, null, new TextHttpResponseHandler() {
+
+    private void doGet() {
+        asyncHttpClient.post(getActivity(), HttpUrl.home_peccancy_list_url,null, new TextHttpResponseHandler() {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 Toast.makeText(getActivity(), "请求失败", Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                List<HomeSubsList.DataBean.ItemListBean> itemList = new Gson().fromJson(responseString, HomeSubsList.class).getData().getItemList();
-                list.addAll(itemList);
-                myHomeSubsListAdapter.notifyDataSetChanged();
+
+                List<HomePeccancyList.DataBean.TopicListBean> topicList = new Gson().fromJson(responseString, HomePeccancyList.class).getData().getTopicList();
+                Log.i("TAG", "topicList=" + topicList.size());
+                list.addAll(topicList);
+                Log.w("TAG", "onSuccess: "+topicList.get(0).getType() );
+                myHomePeccancyListAdapter.notifyDataSetChanged();
             }
         });
     }

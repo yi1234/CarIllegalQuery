@@ -19,7 +19,6 @@
         <item name="android:layout_weight">1</item>
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/font_select</item>
     </style>
 <!--  xmlns:app="http://schemas.android.com/apk/res-auto"-->
 

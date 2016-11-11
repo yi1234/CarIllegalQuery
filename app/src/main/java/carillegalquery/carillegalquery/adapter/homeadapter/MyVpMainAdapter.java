@@ -1,9 +1,10 @@
-package carillegalquery.carillegalquery.adapter;
+package carillegalquery.carillegalquery.adapter.homeadapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import carillegalquery.carillegalquery.childhomefragment.PeccancyFragment;
 import carillegalquery.carillegalquery.childhomefragment.SubscribeFragment;
 
 /**
@@ -12,7 +13,7 @@ import carillegalquery.carillegalquery.childhomefragment.SubscribeFragment;
 
 public class MyVpMainAdapter extends FragmentPagerAdapter {
 
-    private Fragment[] fragments = {new SubscribeFragment(), new SubscribeFragment(), new SubscribeFragment()};
+    private Fragment[] fragments = {new PeccancyFragment(), new SubscribeFragment(), new PeccancyFragment()};
     private String[] tabName = {"违章", "订阅", "用车"};
 
     @Override

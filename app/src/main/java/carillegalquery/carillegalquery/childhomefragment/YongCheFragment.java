@@ -1,29 +1,30 @@
-package carillegalquery.carillegalquery.fragment;
+package carillegalquery.carillegalquery.childhomefragment;
 
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import carillegalquery.carillegalquery.R;
-import carillegalquery.carillegalquery.adapter.homeadapter.MyVpMainAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class YongCheFragment extends Fragment {
 
 
-    private TabLayout tab_layout;
-    private ViewPager vp_main;
-    private MyVpMainAdapter myVpMainAdapter;
 
-    public HomeFragment() {
+
+    private ListView lv_show;
+    private View headView;
+    private ViewPager vp_show;
+
+    public YongCheFragment() {
         // Required empty public constructor
     }
 
@@ -32,16 +33,21 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_yong_che, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        tab_layout = (TabLayout) getView().findViewById(R.id.tab_layout);
-        vp_main = (ViewPager) getView().findViewById(R.id.vp_main);
-        myVpMainAdapter = new MyVpMainAdapter(getChildFragmentManager());
-        vp_main.setAdapter(myVpMainAdapter);
-        tab_layout.setupWithViewPager(vp_main);
+        lv_show = (ListView) getView().findViewById(R.id.lv_yongche_show);
+        //TODO 适配器
+        headView = LayoutInflater.from(getContext()).inflate(R.layout.home_yongche_list_head_item_1, null);
+        initHeadView();
+        lv_show.addHeaderView(headView);
+    }
+
+    private void initHeadView() {
+        vp_show = (ViewPager) headView.findViewById(R.id.vp_yongche_show);
+
     }
 }
