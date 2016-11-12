@@ -8,6 +8,7 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ public class ActivityFragment extends Fragment {
 
     private static final String activityUrl = "http://cheyouquan.kakamobi.com/api/open/activity/list-other.htm?_platform=android&_srv=t&_appName=kakasiji&_product=%E6%B1%BD%E8%BD%A6%E8%BF%9D%E7%AB%A0%E6%9F%A5%E8%AF%A2&_vendor=null&_renyuan=LMN&_version=6.5.1&_system=MRA58K&_manufacturer=Xiaomi&_systemVersion=6.0&_device=Redmi%20Note%204&_imei=862963036311088&_productCategory=weizhang&_operator=M&_androidId=5b5555fd3904d3b8&_mac=02%3A00%3A00%3A00%3A00%3A00&_appUser=1fa393128f33433a82fd248911e4150e&_pkgName=cn.mucang.kaka.android&_screenDpi=3.0&_screenWidth=1080&_screenHeight=1920&_network=wifi&_launch=12&_firstTime=2016-11-08%2020%3A32%3A16&_apiLevel=23&_userCity=440300&_p=&_gpsType=baidu&_cityName=%E6%B7%B1%E5%9C%B3%E5%B8%82&_cityCode=440300&_gpsCity=440300&_longitude=113.909903&_latitude=22.579005&_ipCity=440300&_j=1.0&_webviewVersion=4.7&_r=04e86e92eb0a46c8b3599a77073db92e&_saturnVersion=11.7&product=wzcx&sign=b67be477b202784b99173a292bdd4d4d01";
     private static final String activityViewPagerUrl = "http://cheyouquan.kakamobi.com/api/open/activity/list.htm?_platform=android&_srv=t&_appName=kakasiji&_product=%E6%B1%BD%E8%BD%A6%E8%BF%9D%E7%AB%A0%E6%9F%A5%E8%AF%A2&_vendor=null&_renyuan=LMN&_version=6.5.1&_system=MRA58K&_manufacturer=Xiaomi&_systemVersion=6.0&_device=Redmi%20Note%204&_imei=862963036311088&_productCategory=weizhang&_operator=M&_androidId=5b5555fd3904d3b8&_mac=02%3A00%3A00%3A00%3A00%3A00&_appUser=1fa393128f33433a82fd248911e4150e&_pkgName=cn.mucang.kaka.android&_screenDpi=3.0&_screenWidth=1080&_screenHeight=1920&_network=wifi&_launch=53&_firstTime=2016-11-08%2020%3A32%3A16&_apiLevel=23&_userCity=440300&_p=&_gpsType=baidu&_cityName=%E6%B7%B1%E5%9C%B3%E5%B8%82&_cityCode=440300&_gpsCity=440300&_longitude=113.909919&_latitude=22.578985&_ipCity=440300&_j=1.0&_webviewVersion=4.7&_r=fbebf792ff7a4c64b9780a8706b5bafa&_saturnVersion=11.7&product=wzcx&sign=a636c68abf4eaafaaf59a92a5dc3088a01";
-
+    public static final String TAG="TAG";
     private ListView mListView;
     private ViewPager mViewPager;
     private MyActivityAdapter myActivityAdapter;
@@ -85,7 +86,7 @@ public class ActivityFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
-                intent.putExtra("url",mList.get(position).getActivityUrl());
+                intent.putExtra("url",mList.get((int) id).getActivityUrl());
                 startActivity(intent);
             }
         });
