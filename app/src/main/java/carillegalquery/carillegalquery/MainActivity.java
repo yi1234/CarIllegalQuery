@@ -7,8 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import carillegalquery.carillegalquery.moudle.home.fragment.HomeFragment;
-import carillegalquery.carillegalquery.moudle.shenqu.fragment.SheQuFragment;
+import carillegalquery.carillegalquery.fragment.HomeFragment;
+import carillegalquery.carillegalquery.fragment.SheQuFragment;
 
 public class MainActivity extends AppCompatActivity {
 
