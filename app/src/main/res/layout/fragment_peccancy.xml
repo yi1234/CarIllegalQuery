@@ -6,7 +6,7 @@
     android:scrollbars="none"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="carillegalquery.carillegalquery.childhomefragment.PeccancyFragment">
+    tools:context="carillegalquery.carillegalquery.moudle.home.childhomefragment.PeccancyFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -105,11 +105,11 @@
             android:layout_marginTop="10dp"
             android:background="#ccc"/>
 
-        <carillegalquery.carillegalquery.adapter.homeadapter.MyHomeListView
+        <carillegalquery.carillegalquery.moudle.home.homeadapter.MyHomeListView
             android:id="@+id/lv_home_peccancy"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        </carillegalquery.carillegalquery.adapter.homeadapter.MyHomeListView>
+        </carillegalquery.carillegalquery.moudle.home.homeadapter.MyHomeListView>
 
         <LinearLayout
             android:layout_width="match_parent"
