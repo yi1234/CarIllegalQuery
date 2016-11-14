@@ -99,10 +99,11 @@ public class MyHomePeccancyListAdapter extends BaseAdapter {
             holder.tv_home_peccancy_content.setText(item.getSummary());
             Picasso.with(mContext).load(item.getImageList().get(0).getList().getUrl()).into(holder.iv_home_peccancy_img_1);
             Picasso.with(mContext).load(item.getImageList().get(1).getList().getUrl()).into(holder.iv_home_peccancy_img_2);
-            if(item.getImageList().size() > 2){
+            if (item.getImageList().size() > 2) {
                 Picasso.with(mContext).load(item.getImageList().get(2).getList().getUrl()).into(holder.iv_home_peccancy_img_3);
-            }else {
+            } else {
                 holder.iv_home_peccancy_img_3.setVisibility(View.GONE);
+
             }
             Log.d("TAG", "getItemViewType: " + list.get(position).getType());
             return layout;

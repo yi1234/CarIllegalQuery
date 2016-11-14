@@ -9,7 +9,6 @@
     tools:context="carillegalquery.carillegalquery.MainActivity">
 
 
-    //sdfghj
 
     <FrameLayout
         android:id="@+id/fl_main"

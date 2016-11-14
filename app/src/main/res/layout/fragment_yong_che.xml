@@ -5,10 +5,11 @@
               android:orientation="vertical"
               tools:context=".childfragment.childhomefragment.YongCheFragment">
 
-<ListView
-    android:layout_width="match_parent"
-    android:id="@+id/lv_yongche_show"
-    android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/lv_yongche_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
-</ListView>
+    </ListView>
 </LinearLayout>

@@ -68,35 +68,36 @@
                 android:background="#ccc"/>
         </LinearLayout>
 
-        <LinearLayout
+        <RadioGroup
+            android:id="@+id/home_peccancy_rg"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="horizontal">
 
-            <Button
+            <RadioButton
                 style="@style/rg_main_style"
                 android:background="@null"
                 android:drawableTop="@mipmap/ic_cehyouwenda"
                 android:text="车友问答"/>
 
-            <Button
+            <RadioButton
                 style="@style/rg_main_style"
                 android:background="@null"
                 android:drawableTop="@mipmap/ic_liaoliaoweizhang"
                 android:text="聊聊违章"/>
 
-            <Button
+            <RadioButton
                 style="@style/rg_main_style"
                 android:background="@null"
                 android:drawableTop="@mipmap/ic_yongcheyangche"
                 android:text="用车养车"/>
 
-            <Button
+            <RadioButton
                 style="@style/rg_main_style"
                 android:background="@null"
                 android:drawableTop="@mipmap/ic_langzuyueye"
                 android:text="狼族越野"/>
-        </LinearLayout>
+        </RadioGroup>
 
         <View
             android:layout_width="match_parent"

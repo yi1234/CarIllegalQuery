@@ -1,5 +1,6 @@
 package carillegalquery.carillegalquery;
 
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -9,15 +10,18 @@ import android.widget.RadioGroup;
 
 import carillegalquery.carillegalquery.fragment.HomeFragment;
 import carillegalquery.carillegalquery.fragment.SheQuFragment;
+import carillegalquery.carillegalquery.receiver.MyReceiver;
 
 public class MainActivity extends AppCompatActivity {
 
     private RadioGroup rg_main;
+    private MyReceiver myReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initReceiver();
         initView();
         showFragments(0);
 
@@ -25,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
         //全忘了看人家了情况为二级
     }
 
+    private void initReceiver() {
+        myReceiver = new MyReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        registerReceiver(myReceiver, filter);
+    }
+
     private void initView() {
-
-
-
-        //起来就去了会计案例
         rg_main = (RadioGroup) findViewById(R.id.rg_main);
         ((RadioButton) rg_main.getChildAt(0)).setChecked(true);
         rg_main.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -39,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < group.getChildCount(); i++) {
                     if (group.getChildAt(i).getId() == checkedId) {
                         showFragments(i);
+
                         break;
                     }
                 }
@@ -80,5 +88,13 @@ public class MainActivity extends AppCompatActivity {
         //提交允许状态丢失
         ft.commitAllowingStateLoss();
         lastIndex = currentIndex;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (myReceiver != null) {
+            unregisterReceiver(myReceiver);
+        }
     }
 }

@@ -4,37 +4,22 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <RelativeLayout
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_yongche_show"
         android:layout_width="match_parent"
-        android:layout_height="160dp">
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vp_yongche_show"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-        <TextView
-            android:id="@+id/tv_yongche_head_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="10dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="后多久了肯定就给大家更多见到了国家队到地方大幅度多见到了国家队到地方大幅度多见到了国家队到地方大幅度发的"/>
-    </RelativeLayout>
-
+        android:layout_height="180dp"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:layout_margin="10dp"
         android:orientation="horizontal">
 
         <RadioButton
+            android:id="@+id/xinshoushanglu"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/xinshoushanglu"
             android:button="@null"
             android:drawablePadding="6dp"
             android:drawableTop="@mipmap/ic_home_youhui"

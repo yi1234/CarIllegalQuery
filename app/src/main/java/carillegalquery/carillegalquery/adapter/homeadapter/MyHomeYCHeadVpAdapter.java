@@ -6,10 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import carillegalquery.carillegalquery.R;
+import carillegalquery.carillegalquery.bean.HomeYCHeadVPImg;
 
 /**
  * Created by Administrator on 2016/11/11/011.
@@ -18,29 +22,32 @@ import carillegalquery.carillegalquery.R;
 public class MyHomeYCHeadVpAdapter extends PagerAdapter {
 
     private Context mContext;
-    private List<String> list;
+    private List<HomeYCHeadVPImg.DataBean.ItemListBean> list;
 
-    public MyHomeYCHeadVpAdapter(Context mContext, List<String> list) {
+    public MyHomeYCHeadVpAdapter(Context mContext, List<HomeYCHeadVPImg.DataBean.ItemListBean> list) {
         this.mContext = mContext;
         this.list = list;
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return list == null ? 0 : list.size();
     }
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return false;
+        return view == object;
     }
-
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        ImageView mImageView = (ImageView) LayoutInflater.from(mContext).inflate(R.layout.home_yongche_vp_litem_1, container, false);
-        //Picasso.with(mContext).load(null).into(mImageView);
+        View layout = LayoutInflater.from(mContext).inflate(R.layout.home_yongche_vp_litem_1, container, false);
+        ImageView mImageView = (ImageView) layout.findViewById(R.id.iv_home_yongche_vphead_img);
+        Picasso.with(mContext).load(list.get(position).getImageUrl()).into(mImageView);
+        TextView title = (TextView) layout.findViewById(R.id.tv_yongche_head_title);
+        title.setText(list.get(position).getTitle());
 
-        return super.instantiateItem(container, position);
+        container.addView(layout);
+        return layout;
     }
 
     @Override

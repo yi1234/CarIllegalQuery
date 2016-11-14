@@ -10,7 +10,6 @@ import android.widget.ListView;
 
 public class MyHomeListView extends ListView {
 
-
     public MyHomeListView(Context context) {
         super(context);
     }
