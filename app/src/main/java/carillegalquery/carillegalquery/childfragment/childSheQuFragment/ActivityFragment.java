@@ -8,7 +8,6 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +44,7 @@ public class ActivityFragment extends Fragment {
 
     private static final String activityUrl = "http://cheyouquan.kakamobi.com/api/open/activity/list-other.htm?_platform=android&_srv=t&_appName=kakasiji&_product=%E6%B1%BD%E8%BD%A6%E8%BF%9D%E7%AB%A0%E6%9F%A5%E8%AF%A2&_vendor=null&_renyuan=LMN&_version=6.5.1&_system=MRA58K&_manufacturer=Xiaomi&_systemVersion=6.0&_device=Redmi%20Note%204&_imei=862963036311088&_productCategory=weizhang&_operator=M&_androidId=5b5555fd3904d3b8&_mac=02%3A00%3A00%3A00%3A00%3A00&_appUser=1fa393128f33433a82fd248911e4150e&_pkgName=cn.mucang.kaka.android&_screenDpi=3.0&_screenWidth=1080&_screenHeight=1920&_network=wifi&_launch=12&_firstTime=2016-11-08%2020%3A32%3A16&_apiLevel=23&_userCity=440300&_p=&_gpsType=baidu&_cityName=%E6%B7%B1%E5%9C%B3%E5%B8%82&_cityCode=440300&_gpsCity=440300&_longitude=113.909903&_latitude=22.579005&_ipCity=440300&_j=1.0&_webviewVersion=4.7&_r=04e86e92eb0a46c8b3599a77073db92e&_saturnVersion=11.7&product=wzcx&sign=b67be477b202784b99173a292bdd4d4d01";
     private static final String activityViewPagerUrl = "http://cheyouquan.kakamobi.com/api/open/activity/list.htm?_platform=android&_srv=t&_appName=kakasiji&_product=%E6%B1%BD%E8%BD%A6%E8%BF%9D%E7%AB%A0%E6%9F%A5%E8%AF%A2&_vendor=null&_renyuan=LMN&_version=6.5.1&_system=MRA58K&_manufacturer=Xiaomi&_systemVersion=6.0&_device=Redmi%20Note%204&_imei=862963036311088&_productCategory=weizhang&_operator=M&_androidId=5b5555fd3904d3b8&_mac=02%3A00%3A00%3A00%3A00%3A00&_appUser=1fa393128f33433a82fd248911e4150e&_pkgName=cn.mucang.kaka.android&_screenDpi=3.0&_screenWidth=1080&_screenHeight=1920&_network=wifi&_launch=53&_firstTime=2016-11-08%2020%3A32%3A16&_apiLevel=23&_userCity=440300&_p=&_gpsType=baidu&_cityName=%E6%B7%B1%E5%9C%B3%E5%B8%82&_cityCode=440300&_gpsCity=440300&_longitude=113.909919&_latitude=22.578985&_ipCity=440300&_j=1.0&_webviewVersion=4.7&_r=fbebf792ff7a4c64b9780a8706b5bafa&_saturnVersion=11.7&product=wzcx&sign=a636c68abf4eaafaaf59a92a5dc3088a01";
-    public static final String TAG="TAG";
+//    public static final String TAG = "TAG";
     private ListView mListView;
     private ViewPager mViewPager;
     private MyActivityAdapter myActivityAdapter;
@@ -80,21 +79,24 @@ public class ActivityFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        initData(url);
+
         initView();
+        initData(url);
+
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
-                intent.putExtra("url",mList.get((int) id).getActivityUrl());
+                intent.putExtra("url", mList.get((int) id).getActivityUrl());
                 startActivity(intent);
             }
         });
     }
-
+    public static int mFrist = 1;
     private void initData(String[] url) {
         for (int i = 0; i < url.length; i++) {
             final int mType = i;
+
             asyncHttpClient.post(getActivity(), url[i], null, new TextHttpResponseHandler() {
                 @Override
                 public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
@@ -112,7 +114,10 @@ public class ActivityFragment extends Fragment {
                         List<ActivityViewPagerCategory.DataBean.FocusBean> focus = new Gson().fromJson(responseString, ActivityViewPagerCategory.class).getData().getFocus();
                         mViewPagerList.addAll(focus);
                         myViewPagerAdapter.notifyDataSetChanged();
-                        LooperViewUtils.startLooperView(handler);
+                        if(mFrist == 1){
+                            LooperViewUtils.startLooperView(handler);
+                            mFrist++;
+                        }
                     }
 
                 }
@@ -123,7 +128,6 @@ public class ActivityFragment extends Fragment {
     }
 
 
-
     private void initView() {
         mListView = (ListView) getView().findViewById(R.id.activity_listView);
         mListView.setAdapter(myActivityAdapter);
@@ -132,14 +136,16 @@ public class ActivityFragment extends Fragment {
         mViewPager = (ViewPager) mLayout.findViewById(R.id.activity_viewPager);
         mViewPager.setAdapter(myViewPagerAdapter);
         rg_listener = (RadioGroup) mLayout.findViewById(R.id.activity_viewPager_rg_listener);
-        mViewPager.addOnPageChangeListener(new MyOnPageChangListener(){
+        mViewPager.addOnPageChangeListener(new MyOnPageChangListener() {
             @Override
             public void onPageSelected(int position) {
+
                 RadioButton radioButton = (RadioButton) rg_listener.getChildAt(position);
-                radioButton.setChecked(true);
+                if(radioButton != null){
+                    radioButton.setChecked(true);
+                }
             }
         });
-
 
 
     }

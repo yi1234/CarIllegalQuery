@@ -26,7 +26,7 @@
 
         <item name="android:layout_width">match_parent</item>
 
-        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:layout_height">40dp</item>
         <item name="carillegalquery.carillegalquery:tabMinWidth">60dp</item>
         <item name="carillegalquery.carillegalquery:tabIndicatorColor">@color/tabLayoutSelectColor</item>
         <item name="carillegalquery.carillegalquery:tabMode">scrollable</item>

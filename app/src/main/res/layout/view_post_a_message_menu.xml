@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:textColor="@color/shenZhenColorPrimaryDark"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/post_a_message_type" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/rb_shenqu_custom_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:drawableTop="@mipmap/saturn__ic_topic_type_common"
+            android:text="@string/custom_topic" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:visibility="invisible"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:gravity="center"
+            android:id="@+id/rb_shenqu_ask_questions"
+            android:drawableTop="@mipmap/saturn__ic_topic_type_ask"
+            android:text="@string/ask_questions" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:gravity="center"
+            android:visibility="invisible"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:id="@+id/rb_shenqu_models_to_vote"
+            android:drawableTop="@mipmap/saturn__ic_topic_type_vote"
+            android:text="@string/models_to_vote" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:gravity="center"
+            android:visibility="invisible"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:id="@+id/rb_shenqu_help"
+            android:drawableTop="@mipmap/saturn__ic_topic_type_help"
+            android:text="@string/your_car_and_mutual_assistance" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5" />
+    <ImageView
+        android:id="@+id/iv_shenqu_close"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:src="@mipmap/saturn__ic_topic_choose_close"
+        android:layout_height="wrap_content" />
+</LinearLayout>

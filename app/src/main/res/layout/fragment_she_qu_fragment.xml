@@ -1,21 +1,67 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="carillegalquery.carillegalquery.fragment.SheQuFragment">
-    <android.support.design.widget.TabLayout
-        style="@style/tabLayout"
-        android:id="@+id/tablayout"
-        android:layout_width="match_parent" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/shenZhenColorPrimaryDark"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/shen_qu_title"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/saturn__popwindow_search"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/shen_qu_more"
+                android:layout_height="match_parent"
+                android:src="@mipmap/saturn__pop_menu_more"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                />
 
-    <!-- TODO: Update blank fragment layout -->
-    <android.support.v4.view.ViewPager
-        style="@style/tabLayout"
-        android:id="@+id/vp_show"
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider"/>
+        <android.support.design.widget.TabLayout
+            style="@style/tabLayout"
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent" />
 
-        android:layout_height="match_parent" />
+        <!-- TODO: Update blank fragment layout -->
+        <android.support.v4.view.ViewPager
+            style="@style/tabLayout"
+            android:id="@+id/vp_show"
+
+            android:layout_height="match_parent" />
 
 
+    </LinearLayout>
 
-</LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_gravity="bottom|right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/shen_qu_fab"
+        android:src="@mipmap/saturn__jiakao_kemu_top"/>
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -34,7 +35,7 @@ public class MyShenZhenAdapter extends BaseAdapter {
     private Context mContext;
     private List<ImageListCategory> mGridViewList;
     private List<ShenZhenCategory.DataBean.ItemListBean> list;
-
+    public static final String TAG = "TAG";
 
     public static final int TYPE = 1048576;
 
@@ -89,6 +90,12 @@ public class MyShenZhenAdapter extends BaseAdapter {
             //更新相同界面的UI
             updateUI(holder, item);
             //更新不同的UI
+            if(item.getImageList()!= null){
+                holder.iv_only_one_imageview.setVisibility(View.VISIBLE);
+                Picasso.with(mContext).load(item.getImageList().get(0).getDetail().getUrl()).into(holder.iv_only_one_imageview);
+            }else {
+                holder.iv_only_one_imageview.setVisibility(View.GONE);
+            }
             holder.rb_message.setText(String.valueOf(item.getCommentCount()));
             holder.rb_zan.setText(String.valueOf(item.getZanCount()));
         } else {
@@ -103,14 +110,13 @@ public class MyShenZhenAdapter extends BaseAdapter {
             //更新不同的UI
             if (item.getCommentCount() > 0) {
                 holder.tv_count.setText(String.valueOf(item.getCommentCount()));
-
             } else {
                 holder.tv_count.setText("0" + "人回答");
             }
 
 
             final List<ShenZhenCategory.DataBean.ItemListBean.ImageListBean> imageList = getItem(position).getImageList();
-
+//            Log.e(TAG, "position: = " + position);
             if (imageList != null) {
                 holder.mGridView.setVisibility(View.VISIBLE);
                 //通过屏幕宽度设置图片高度
@@ -156,6 +162,7 @@ public class MyShenZhenAdapter extends BaseAdapter {
     class ViewHolder {
         CircleImageView civ_icon;
         GridView mGridView;
+        ImageView iv_only_one_imageview;
         TextView tv_nickName;
         TextView tv_replytime;
         TextView tv_location;
@@ -181,6 +188,7 @@ public class MyShenZhenAdapter extends BaseAdapter {
                 tv_count = (TextView) convertView.findViewById(R.id.tv_count);
                 mGridView = (GridView) convertView.findViewById(R.id.gridView);
             } else if (type == TYPE_CONTENT_UNIMAGVIEW) {
+                iv_only_one_imageview = (ImageView) convertView.findViewById(R.id.iv_shenzhen_only_one_imageview);
                 rb_message = (RadioButton) convertView.findViewById(R.id.rb_message);
                 rb_zan = (RadioButton) convertView.findViewById(R.id.rb_zan);
 

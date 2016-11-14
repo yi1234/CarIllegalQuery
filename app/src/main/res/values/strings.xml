@@ -3,4 +3,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shen_qu_title">车友圈</string>
+    <string name="shen_qu_message">信息</string>
+    <string name="shen_qu_personal_page">个人主页</string>
+    <string name="post_a_message_type">选择发帖类型</string>
+    <string name="custom_topic">普通话题</string>
+    <string name="ask_questions">提问</string>
+    <string name="models_to_vote">车型投票</string>
+    <string name="your_car_and_mutual_assistance">选车互助</string>
 </resources>
