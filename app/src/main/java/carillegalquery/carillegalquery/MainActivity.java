@@ -20,7 +20,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
         showFragments(0);
-        //cc
+
+
+        //全忘了看人家了情况为二级
     }
 
     private void initView() {
