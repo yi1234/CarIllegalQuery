@@ -12,7 +12,7 @@ import android.widget.Toast;
  */
 
 public class MyReceiver extends BroadcastReceiver {
-
+//cc
     private ConnectivityManager mConnectivityManager;
     private NetworkInfo netInfo;
 
