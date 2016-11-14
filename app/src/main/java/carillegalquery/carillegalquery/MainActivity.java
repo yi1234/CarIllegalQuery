@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+
+
+
+        //起来就去了会计案例
         rg_main = (RadioGroup) findViewById(R.id.rg_main);
         ((RadioButton) rg_main.getChildAt(0)).setChecked(true);
         rg_main.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
